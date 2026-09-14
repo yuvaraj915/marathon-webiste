@@ -380,3 +380,33 @@ footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
 @media (max-width:900px){
   .beta-banner{padding:10px 50px 10px 16px; font-size:12px;}
 }
+/* ---------- DEVELOPER FLOATING BUTTON ---------- */
+.dev-fab{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:150;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:var(--ink);
+  color:var(--paper);
+  padding:14px 18px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  border:1px solid var(--ink);
+  transition:transform .2s ease, background .2s ease, padding .2s ease;
+  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+}
+.dev-fab-icon{font-size:14px;}
+.dev-fab:hover{
+  transform:translateY(-3px);
+  background:var(--paper);
+  color:var(--ink);
+  border-color:var(--ink);
+}
+
+@media (max-width:900px){
+  .dev-fab{ bottom:16px; right:16px; padding:12px 16px; font-size:12px; }
+}
