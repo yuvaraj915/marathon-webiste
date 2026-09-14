@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Marathon </title>
+<meta name="description" content="Discover premium city marathons, upcoming races, and register for your next finish line.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="beta-banner" id="beta-banner">
+  <span>This website currently under  development — you're viewing a beta build. Some features may change.</span>
+  <button id="beta-close" aria-label="Dismiss">&times;</button>
+</div>
+
+<header>
+  <nav>
+    <a href="#" class="logo" data-nav="home">Logo</a>
+    <div class="nav-links">
+      <a href="#" data-nav="home" class="active">Home</a>
+      <a href="#" data-nav="about">About</a>
+      <a href="#" data-nav="contact">Contact</a>
+    </div>
+    <a href="#" class="nav-cta" data-nav="contact">Register now ↗</a>
+    <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- ============ HOME ============ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1600&auto=format&fit=crop" alt="Marathon runners racing through a city">
+    </div>
+    <div class="hero-top">
+      <span>Marathon series · Mysore</span>
+      <span>Season 1</span>
+    </div>
+    <div class="hero-body">
+      <div class="hero-eyebrow">The road remembers every step</div>
+      <h1>Own the distance.</h1>
+      <div class="hero-foot">
+        <a href="#" class="btn" data-nav="contact">Choose your race →</a>
+        <p class="hero-sub">World-class courses, exact timing, and the energy of a city moving with you.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+
+  <section class="block" id="races">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label">01 / Race calendar</span>
+          <h2>Upcoming events</h2>
+        </div>
+        <p>Three distinct cities. Three measured courses. One uncompromising standard from start line to medal.</p>
+      </div>
+
+      <div class="race-grid">
+
+        <div class="race-card">
+          <div class="race-meta"><span>01 · Mysore</span><span>10 KM & 5KM</span></div>
+          <div class="race-photo">
+            <img src="images/city-race.jpg" alt="Runners at Coastline 42">
+          </div>
+          <h3>ovels</h3>
+          <div class="race-row">
+            <div class="race-info"><strong>17 Jan 2027</strong></div>
+            <a href="#" class="arrow-btn" data-nav="contact" aria-label="Register for Coastline 42">→</a>
+          </div>
+        </div>
+
+        <div class="race-card">
+          <div class="race-meta"><span>02 · Bengaluru</span><span>42.2 KM</span></div>
+          <div class="race-photo">
+            <img src="images/coastal-race.jpg" alt="Runners at City Circuit">
+          </div>
+          <h3>City Circuit</h3>
+          <div class="race-row">
+            <div class="race-info"><strong>18 Oct 2026</strong>Cubbon Park to the skyline</div>
+            <a href="#" class="arrow-btn" data-nav="contact" aria-label="Register for City Circuit">→</a>
+          </div>
+        </div>
+
+        <div class="race-card">
+          <div class="race-meta"><span>mysore</span><span>21.1 KM</span></div>
+          <div class="race-photo">
+            <img src="images/marathon-hero (1).jpg" alt="Runners at Capital Half">
+          </div>
+          <h3>Capital Half</h3>
+          <div class="race-row">
+            <div class="race-info"><strong>29 Nov 2026</strong>Palce loop</div>
+            <a href="#" class="arrow-btn" data-nav="contact" aria-label="Register for Capital Half">→</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block motion">
+    <div class="wrap">
+      <div class="motion-grid">
+        <div>
+          <span class="label" style="color:#a8a8a8;"> </span>
+          <h2>Built around your next personal best.</h2>
+        </div>
+        <div class="motion-right">
+          <div class="stat-row">
+            <div>
+              <div class="stat-num" data-count="12" data-suffix="K">0</div>
+              <div class="stat-label">Runners</div>
+            </div>
+            <div>
+              <div class="stat-num" data-count="12" data-suffix="">0</div>
+              <div class="stat-label">Course records</div>
+            </div>
+            <div>
+              <div class="stat-num" data-count="86" data-suffix="%">0</div>
+              <div class="stat-label">Finish rate</div>
+            </div>
+          </div>
+          <p>Every detail is calibrated: clear starts, certified distances, live splits, considered recovery, and a finish that stays with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <span class="label">03 / The collective</span>
+      <div class="collective-grid">
+        <div class="collective-photo">
+          <img src="images/community-runners.jpg" alt="Marathon finishers celebrating together">
+        </div>
+        <div class="collective-text">
+          <h2>The finish is personal. The feeling is shared.</h2>
+          <p>First marathon or fiftieth, the road is open to everyone willing to meet it. Come for the challenge. Stay for the people.</p>
+          <a href="#" class="btn btn-outline" data-nav="about">Our story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" id="page-about">
+
+  <section class="page-hero wrap">
+    <span class="label"></span>
+    <h1>A better way to race.</h1>
+    <p>We create city marathons where performance, place, and community meet. Nothing extra. Nothing overlooked.</p>
+  </section>
+
+  <section class="standard">
+    <div class="wrap" style="padding:0;">
+      <div style="padding:56px 40px 0;"><span class="label">Our standard</span></div>
+      <div class="standard-grid">
+        <div class="standard-item">
+          <div class="num">01</div>
+          <h3>Measured</h3>
+          <p>Every choice is made for a fair course, a welcoming start, and a finish worth earning.</p>
+        </div>
+        <div class="standard-item">
+          <div class="num">02</div>
+          <h3>Inclusive</h3>
+          <p>Every choice is made for a fair course, a welcoming start, and a finish worth earning.</p>
+        </div>
+        <div class="standard-item">
+          <div class="num">03</div>
+          <h3>Unforgettable</h3>
+          <p>Every choice is made for a fair course, a welcoming start, and a finish worth earning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap about-cta">
+    <img src="https://images.unsplash.com/photo-1530137073521-a3880dbdcc4a?q=80&w=1200&auto=format&fit=crop" alt="Runners along a coastal marathon route">
+    <div class="about-cta-text">
+      <p>We are building India's most considered race calendar, one local running community at a time.</p>
+      <a href="#" class="btn btn-dark" data-nav="contact">Join the next start →</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="page-contact">
+
+  <section class="page-hero wrap">
+    <span class="label"></span>
+    <h1>Talk to the race team.</h1>
+    <p>Registration, race-day details, accessibility, or partnerships—we will point you in the right direction.</p>
+  </section>
+
+  <div class="wrap">
+    <form class="contact-grid" id="contact-form">
+      <div class="contact-support">
+        <span class="label">Runner support</span>
+        <a href="mailto:race@form42.run">race@form42.run</a>
+      </div>
+      <div class="contact-form">
+        <div class="two-col">
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" rows="6" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="submit-btn">Send message</button>
+          <p class="form-note" id="form-note">Thanks — the race team will reply within two working days.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Logo</div>
+        <p>Measured courses. Unforgettable cities. Your strongest finish yet.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#" data-nav="home">Home</a>
+        <a href="#" data-nav="about">About</a>
+        <a href="#" data-nav="contact">Contact</a>
+        <a href="#" data-nav="contact">Register</a>
+      </div>
+      <div class="footer-col footer-next">
+        <h4>Next start</h4>
+        <strong>Bengaluru City 42</strong>
+        <p style="color:#a8a8a8;">18 October 2026 · 05:30</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 copyrite unique athletics club mysore</span>
+      <span>Run with intention.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
