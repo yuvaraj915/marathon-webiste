@@ -50,6 +50,16 @@ nav{
   font-family:'Archivo Black',sans-serif;
   font-size:20px;
   letter-spacing:-0.01em;
+  display:flex;
+  align-items:left;
+  gap:0px;
+}
+.logo-img{
+  width:75px;
+  height:100px;
+  object-fit:cover;
+  flex-shrink:0;
+  align-self:left;
 }
 .nav-links{display:flex; gap:34px; font-size:25px; font-weight:500;}
 .nav-links a{color:var(--muted); transition:color .2s ease;}
@@ -68,6 +78,10 @@ nav{
   background:none; border:none; cursor:pointer; padding:6px;
 }
 .burger span{width:22px;height:2px;background:var(--ink);display:block;}
+
+
+
+
 
 /* ---------- PAGES ---------- */
 .page{display:none;}
@@ -410,3 +424,7 @@ footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
 @media (max-width:900px){
   .dev-fab{ bottom:16px; right:16px; padding:12px 16px; font-size:12px; }
 }
+
+
+
+
