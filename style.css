@@ -137,11 +137,12 @@ nav{
   display:flex; align-items:center; gap:28px; flex-wrap:wrap;
 }
 .btn{
-  display:inline-flex; align-items:center; gap:10px;
+  display:inline-flex; align-items:center; gap: 10px;
   background:var(--paper); color:var(--ink);
   font-weight:600; font-size:13px; letter-spacing:0.04em;
   text-transform:uppercase;
-  padding:16px 24px;
+  padding:16px 10px;
+  border-radius: 20px; /* adjust this value to control roundness */
   transition:transform .2s ease, background .2s ease;
   border:1px solid var(--paper);
   cursor:pointer;
@@ -427,4 +428,25 @@ footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
 
 
 
+/* race calender */
+.race-collapse {
+  overflow: hidden;
+  max-height: 500px; /* enough to show meta + photo */
+  opacity: 1;
+  transition: max-height .35s ease, opacity .25s ease;
+}
 
+.race-card.closed .race-collapse {
+  max-height: 0;
+  opacity: 0;
+}
+
+.arrow-btn {
+  transition: transform .25s ease;
+  background: none;
+  cursor: pointer;
+}
+
+.race-card.closed .arrow-btn {
+  transform: rotate(-90deg);
+}

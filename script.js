@@ -69,3 +69,31 @@ form.addEventListener('submit', (e) => {
   note.classList.add('show');
   form.reset();
 });
+
+// ---------- upconming calender js  ---------->
+document.querySelectorAll('.race-card').forEach(card => {
+  const toggleBtn = card.querySelector('.arrow-btn');
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = card.classList.contains('open');
+
+    // close any other open cards (accordion-style, only one open at a time)
+    document.querySelectorAll('.race-card.open').forEach(openCard => {
+      if (openCard !== card) {
+        openCard.classList.remove('open');
+        openCard.querySelector('.arrow-btn').setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    card.classList.toggle('open', !isOpen);
+    toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+
+/*race calender js*/
+document.querySelectorAll('.race-card').forEach(card => {
+  const toggleBtn = card.querySelector('.arrow-btn');
+  toggleBtn.addEventListener('click', () => {
+    const isClosed = card.classList.toggle('closed');
+    toggleBtn.setAttribute('aria-expanded', String(!isClosed));
+  });
+});
