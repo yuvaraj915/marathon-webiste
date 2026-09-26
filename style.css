@@ -130,7 +130,8 @@ nav{
   color:var(--paper);
 }
 .hero-eyebrow{
-  font-size:13px; font-weight:600; letter-spacing:0.04em;
+  font: size 42px; font-weight:600; letter-spacing:0.04em;
+  font-family: 'Space Grotesk', sans-serif;
   text-transform:uppercase;
   color:#d8d8d8;
   margin-bottom:10px;
