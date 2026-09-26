@@ -20,6 +20,7 @@ body{
 }
 
 h1,h2,.display{
+  font-size: 68px;
   font-family:'Archivo Black',sans-serif;
   font-weight:400;
   text-transform:uppercase;
