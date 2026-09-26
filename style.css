@@ -19,22 +19,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-h1{
-  font-size: 68px;
-}
-
-h2{
-  font-size: 42px;
-}
-
-h3{
-  font-size: 26px;
-}
-
-h4{
-  font-size: 16px;
-}
-.display{
+h1,h2,.display{
   font-family:'Archivo Black',sans-serif;
   font-weight:400;
   text-transform:uppercase;
@@ -144,7 +129,7 @@ nav{
   color:var(--paper);
 }
 .hero-eyebrow{
-  font-size:13px; font-weight:600; letter-spacing:0.04em;
+  font: size 68px; font-weight:600; letter-spacing:0.04em;
   text-transform:uppercase;
   color:#d8d8d8;
   margin-bottom:10px;
