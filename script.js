@@ -70,6 +70,31 @@ form.addEventListener('submit', (e) => {
   form.reset();
 });
 
+// ---------- Hero image slider ----------
+const slides = document.querySelectorAll('#hero-slider .slide');
+const dotsWrap = document.getElementById('hero-dots');
+let currentSlide = 0;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsWrap.appendChild(dot);
+});
+const dots = dotsWrap.querySelectorAll('.dot');
+
+function goToSlide(index){
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = index;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+setInterval(() => {
+  goToSlide((currentSlide + 1) % slides.length);
+}, 4000); // change slide every 4 seconds
+
 /* ---------- Upcoming events: single button collapses/expands the whole race-grid ---------- */
 const toggleBtn = document.getElementById('toggle-races');
 const raceGrid = document.getElementById('race-grid');
