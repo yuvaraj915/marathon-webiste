@@ -42,10 +42,27 @@ header{
   background:var(--paper);
   border-bottom:1px solid var(--line);
 }
+
 nav{
-  max-width:1320px; margin:0 auto; padding:22px 40px;
+  position: relative;
+  max-width:1320px; margin:0 auto; padding:32px 40px;
   display:flex; align-items:center; justify-content:space-between;
 }
+
+/* ---- LOGO: boxed wordmark, centered in nav ---- */
+.logo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family:'Archivo Black',sans-serif;
+  font-size:22px;
+  letter-spacing:0.02em;
+  padding:8px 14px;
+  display:inline-flex;
+  align-items:center;
+}
+
 .nav-links{display:flex; gap:34px; font-size:25px; font-weight:500;}
 .nav-links a{color:var(--muted); transition:color .2s ease;}
 .nav-links a:hover, .nav-links a.active{color:var(--ink);}
@@ -61,8 +78,19 @@ nav{
 .burger{
   display:none; flex-direction:column; gap:5px;
   background:none; border:none; cursor:pointer; padding:6px;
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 210;
 }
-.burger span{width:22px;height:2px;background:var(--ink);display:block;}
+.burger span{
+  width:22px; height:2px; background:var(--ink); display:block;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.burger.open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2){ opacity: 0; }
+.burger.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
 /* ---------- PAGES ---------- */
 .page{display:none;}
@@ -306,7 +334,7 @@ footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
 
 .about-cta{padding:100px 0; display:grid; grid-template-columns:1fr 1.2fr; gap:64px; align-items:center;}
 .about-cta img{aspect-ratio:16/10; object-fit:cover; width:100%; filter:grayscale(1);}
-.about-cta-text p{color:var(--muted); font-size:17px; max-width:420px; margin-bottom:28px;}
+.about-cta-text p{color:var(--muted); font-size:17px; margin-bottom:28px; max-width:420px;}
 
 /* ---------- CONTACT ---------- */
 .contact-grid{
@@ -364,6 +392,7 @@ footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
   .hero-top{padding:0 22px;}
   .hero-body{padding:0 22px 48px;}
 }
+
 /* ---------- BETA BANNER ---------- */
 .beta-banner{
   position:relative;
@@ -411,6 +440,7 @@ footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
 @media (max-width:900px){
   .beta-banner{padding:10px 50px 10px 16px; font-size:12px;}
 }
+
 /* ---------- DEVELOPER FLOATING BUTTON ---------- */
 .dev-fab{
   position:fixed;
@@ -452,6 +482,7 @@ footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
   flex-shrink:0;
   cursor:pointer;
   transition:transform .25s ease;
+  margin-left: auto;
 }
 #toggle-races.closed{
   transform:rotate(-90deg);

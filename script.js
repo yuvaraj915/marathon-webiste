@@ -9,27 +9,49 @@ function goTo(name){
   pages[name].classList.add('active');
   navLinks.forEach(l => l.classList.toggle('active', l.dataset.nav === name));
   window.scrollTo({top:0, behavior:'instant'});
-  document.querySelector('.nav-links').style.display = '';
 }
 
 document.querySelectorAll('[data-nav]').forEach(el => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     goTo(el.dataset.nav);
+    closeMobileMenu();
   });
 });
 
 // ---------- Mobile menu ----------
 const burger = document.getElementById('burger');
 const navLinksWrap = document.querySelector('.nav-links');
-burger.addEventListener('click', () => {
-  const open = navLinksWrap.style.display === 'flex';
-  navLinksWrap.style.display = open ? 'none' : 'flex';
+const headerEl = document.querySelector('header');
+
+function openMobileMenu(){
+  burger.classList.add('open');
+  navLinksWrap.style.display = 'flex';
   Object.assign(navLinksWrap.style, {
-    flexDirection:'column', position:'fixed', top:'64px', left:'0', right:'0',
-    background:'#ffffff', padding:'24px 22px', gap:'18px',
-    borderBottom:'1px solid #e2e2e0', zIndex:200
+    flexDirection:'column',
+    position:'fixed',
+    top: headerEl.offsetHeight + 'px',
+    left:'0', right:'0',
+    background:'#ffffff',
+    padding:'24px 22px',
+    gap:'18px',
+    borderBottom:'1px solid #e2e2e0',
+    zIndex:200
   });
+}
+
+function closeMobileMenu(){
+  burger.classList.remove('open');
+  navLinksWrap.style.display = 'none';
+}
+
+burger.addEventListener('click', () => {
+  const isOpen = burger.classList.contains('open');
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
 });
 
 // ---------- Marquee ----------
@@ -104,3 +126,12 @@ toggleBtn.addEventListener('click', () => {
   toggleBtn.classList.toggle('closed');
   toggleBtn.setAttribute('aria-expanded', raceGrid.classList.contains('closed') ? 'false' : 'true');
 });
+
+// ---------- Beta banner dismiss ----------
+const betaBanner = document.getElementById('beta-banner');
+const betaClose = document.getElementById('beta-close');
+if (betaBanner && betaClose) {
+  betaClose.addEventListener('click', () => {
+    betaBanner.classList.add('hidden');
+  });
+}
