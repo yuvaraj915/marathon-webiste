@@ -20,7 +20,6 @@ body{
 }
 
 h1,h2,.display{
-  font-size: 68px;
   font-family:'Archivo Black',sans-serif;
   font-weight:400;
   text-transform:uppercase;
@@ -46,23 +45,12 @@ header{
 
 nav{
   position: relative;
-  max-width:1320px; margin:0 auto; padding:32px 40px;
+  max-width:1320px; margin:0 auto; padding:48px 40px;
   display:flex; align-items:center; justify-content:space-between;
 }
 
 /* ---- LOGO: boxed wordmark, centered in nav ---- */
-.logo{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-family:'Archivo Black',sans-serif;
-  font-size:22px;
-  letter-spacing:0.02em;
-  padding:8px 14px;
-  display:inline-flex;
-  align-items:center;
-}
+
 
 .nav-links{display:flex; gap:34px; font-size:25px; font-weight:500;}
 .nav-links a{color:var(--muted); transition:color .2s ease;}
@@ -158,8 +146,7 @@ nav{
   color:var(--paper);
 }
 .hero-eyebrow{
-  font: size 42px; font-weight:600; letter-spacing:0.04em;
-  font-family: 'Space Grotesk', sans-serif;
+  font-size:13px; font-weight:600; letter-spacing:0.04em;
   text-transform:uppercase;
   color:#d8d8d8;
   margin-bottom:10px;
