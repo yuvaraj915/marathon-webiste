@@ -46,3 +46,13 @@ const distanceItems = ['5 KM', '10 KM', '15 KM', '21 KM'];
 const distanceTrack = document.getElementById('distance-track');
 distanceTrack.innerHTML = [...distanceItems, ...distanceItems, ...distanceItems, ...distanceItems]
   .map(t => `<span>${t}</span>`).join('');
+
+  /*js for upcoming events  opening and closing section*/
+  const eventsToggle = document.getElementById('events-toggle');
+const eventsList = document.querySelector('.events-list');
+
+eventsToggle.addEventListener('click', () => {
+  eventsList.classList.toggle('closed');
+  eventsToggle.classList.toggle('closed');
+  eventsToggle.setAttribute('aria-expanded', !eventsList.classList.contains('closed'));
+});

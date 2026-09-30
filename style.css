@@ -209,7 +209,7 @@ nav{
   flex-wrap:wrap;
 }
 
-/*scroll animatimon css design*/
+/*scroll animation csss*/
 .distance-marquee{
   background: var(--ink, #000);
   border-bottom: 1px solid #fff;
@@ -251,7 +251,7 @@ nav{
 }
 
 
-/*upcoming calender section design*/
+/*-upcoming events section design-*/
 .events-section{
   background: #fff;
   padding: 90px 0;
@@ -345,4 +345,48 @@ nav{
   .events-list{
     grid-template-columns: 1fr;
   }
+}
+
+
+/*opening and closing of the upcoming events*/
+.events-heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.events-heading h2{
+  margin: 4px 0 0;
+}
+
+#events-toggle{
+  width: 48px;
+  height: 48px;
+  border: 1px solid #000;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform .25s ease;
+}
+
+#events-toggle.closed{
+  transform: rotate(-90deg);
+}
+
+.events-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  overflow: hidden;
+  max-height: 800px;
+  opacity: 1;
+  transition: max-height .4s ease, opacity .3s ease, margin-top .4s ease;
+}
+
+.events-list.closed{
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
 }
