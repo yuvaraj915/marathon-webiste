@@ -47,7 +47,7 @@ header{
 
 nav{
   position: relative;
-  max-width:1320px; margin:0 auto; padding:48px 40px;
+  max-width:1320px; margin:0 auto; padding:16px 24px;
   display:flex; align-items:center; justify-content:space-between;
   background:black;
 }
