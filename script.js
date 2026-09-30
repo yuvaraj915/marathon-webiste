@@ -39,3 +39,10 @@ function goToSlide(index){
 setInterval(() => {
   goToSlide((currentSlide + 1) % slides.length);
 }, 4000);
+
+
+/*js for scroll animation after image slider section*/
+const distanceItems = ['5 KM', '10 KM', '15 KM', '21 KM'];
+const distanceTrack = document.getElementById('distance-track');
+distanceTrack.innerHTML = [...distanceItems, ...distanceItems, ...distanceItems, ...distanceItems]
+  .map(t => `<span>${t}</span>`).join('');
