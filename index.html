@@ -1,147 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MDME</title>
-<meta name="description" content="Discover premium city marathons, upcoming races, and register for your next finish line.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="beta-banner" id="beta-banner">
-  <span>This website currently under development — you're viewing a beta build. Some features may change.</span>
-  <button id="beta-close" aria-label="Dismiss">&times;</button>
-</div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Form/42 — Premium Marathon Series</title>
+    <meta name="description" content="Discover premium city marathons, upcoming races, and register for your next finish line.">
+    <meta property="og:title" content="Form/42 — Premium Marathon Series">
+    <meta property="og:description" content="Discover premium city marathons, upcoming races, and register for your next finish line.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer>
 
-<header>
-  <nav>
-    <div class="nav-links">
-      <a href="index.html" data-nav="home" class="">HOME</a>
-      <a href="aboutus.html" data-nav="about">ABOUT US</a>
-      <a href="contactus.html" data-nav="contact">CONTACT US</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScL_WizdNvO6INWPTZCJ2vbD3czSYTEwpZgBB7y1-mJ5gqrEw/viewform?usp=header" target="_blank" rel="noopener" class="nav-register">REGISTER</a>
-</div>
-    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-img" id="hero-slider">
-    <img src="images/img_1(1).jpeg" alt="" class="slide active">
-    <img src="images/img_1(1).png" alt="" class="slide">
-    <img src="images/img_1(2).jpeg" alt="" class="slide">
-    <img src="images/img_1(3).jpeg" alt="" class="slide">
-    <img src="images/img_1(1).jpeg" alt="" class="slide">
+    </script>
+    </head>
+    <body class="home">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="logo" href="index.html">MDMA<span></span></a>
+          <nav class="desktop-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a><a href="about.html">About</a>
+            <a href="contact.html">Contact</a></nav>
+            <a class=" btn-dark desktop-cta" href="register.html">Register now <span>↗</span>
+            </a>
+            <button class="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+          </div>
+          <nav class="mobile-nav" aria-label="Mobile navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a class="btn btn-dark" href="register.html">Register now</a></nav>
+          </header><main><section class="hero">
+            <img src="images/img_1(1).jpeg" alt="Marathon runners racing through a city">
+            <div class="hero-shade"></div><div class="container hero-inner"><div class="hero-meta">
+            </div>
+            <div class="hero-copy reveal">
+              <p class="eyebrow dim-light">The road remembers every step</p>
+              <h1>Own the<br>distance.</h1>
+              <div class="hero-actions">
+                <a class="btn btn-light" href="register.html">Choose your race <span>→</span>
+                </a>
+                <p>World-class courses, exact timing, and the energy of a city moving with you.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="ticker">
+          <div>
+            <span>42.195 KM · One start · Your finish · Race the city · </span>
+            <span aria-hidden="true">42.195 KM · One start · Your finish · Race the city · </span>
+          </div></div><section class="section">
+            <div class="container"><div class="section-heading"><div>
+              <p class="eyebrow muted">01 / Race calendar</p>
+              <h2>Upcoming events</h2>
+            </div>
+            <p>Three distinct cities. Three measured courses. One uncompromising standard from start line to medal.</p>
+          </div>
+          
+          <div class="race-grid">
+<article class="race-card">
+  <div class="race-meta">
+    <span>01 · Mumbai</span>
+    <span>42.2 KM</span>
   </div>
-  <div class="hero-dots" id="hero-dots"></div>
-
-  <!-- Hero body section -->
-
-  <div class="hero-body">
-    <h1>The road remembers every step. Own the distance </h1>
-     <div class="hero-foot">
-      <a href="#" class="btn" data-nav="contact">Choose your race →</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScL_WizdNvO6INWPTZCJ2vbD3czSYTEwpZgBB7y1-mJ5gqrEw/viewform?usp=header" class="btn" target="_blank" rel="noopener">REGISTER →</a>
+  <img src="assets/coastal-race.jpg" alt="Runners at Mumbai Coastline 42" loading="lazy">
+  <h3>Coastline 42</h3>
+  <div class="race-bottom">
+    <div>
+      <strong>17 Jan 2027</strong>
+      <p>Mumbai Sea Link to Marine Drive</p>
     </div>
+    <a class="icon-link" href="register.html?race=Mumbai+Coastline+42" aria-label="Register for Mumbai Coastline 42">→</a>
   </div>
+</article>
+
+<article class="race-card">
+  <div class="race-meta">
+    <span>02 · Bengaluru</span>
+    <span>42.2 KM</span>
+  </div>
+  <img src="assets/city-race.jpg" alt="Runners at Bengaluru City Circuit" loading="lazy">
+  <h3>City Circuit</h3>
+  <div class="race-bottom">
+    <div>
+      <strong>18 Oct 2026</strong>
+      <p>Cubbon Park to the skyline</p>
+    </div>
+    <a class="icon-link" href="register.html?race=Bengaluru+City+Circuit" aria-label="Register for Bengaluru City Circuit">→</a>
+  </div>
+</article>
+<article class="race-card">
+  <div class="race-meta">
+    <span>03 · Delhi</span>
+    <span>21.1 KM</span>
+  </div><img src="assets/community-runners.jpg" alt="Runners at Delhi Capital Half" loading="lazy">
+  <h3>Capital Half</h3>
+  <div class="race-bottom">
+    <div>
+      <strong>29 Nov 2026</strong>
+      <p>India Gate city loop</p>
+    </div>
+    <a class="icon-link" href="register.html?race=Delhi+Capital+Half" aria-label="Register for Delhi Capital Half">→</a>
+  </div>
+</article>
+</div>
+</div>
 </section>
 
-<!--scrooling animation section -->
-<div class="distance-marquee">
-  <div class="distance-track" id="distance-track"></div>
-</div>
-
-<!--upcoming event calender section opening and closing -->
-
-
-<!--upcoming event calender section-->
-<section class="events-heading">
-  <div class="events-tag">
-    <div class="events-heading">
-      <span class="events-tag">Upcoming</span>
-      <h2>Race Calendar</h2>
-       <button type="button" id="events-toggle" aria-expanded="true" aria-label="Toggle race calendar">→</button>
+<section class="section section-dark">
+  <div class="container motion-grid">
+    <div>
+      <p class="eyebrow dim-light">02 / In motion</p>
+      <h2>Built around your next personal best.</h2>
     </div>
-
-    <div class="events-list">
-
-      <div class="event-card">
-        <div class="event-photo">
-          <img src="images/race1.jpg" alt="City Circuit marathon">
-        </div>
-        <div class="event-info">
-          <span class="event-date">18 OCT 2026</span>
-          <h3>mysore</h3>
-          <p>place+</p>
-          <a href="#" class="event-link">Register →</a>
-        </div>
-      </div>
-
-      <div class="event-card">
-        <div class="event-photo">
-          <img src="images/race2.jpg" alt="Capital Half marathon">
-        </div>
-        <div class="event-info">
-          <span class="event-date">29 NOV 2026</span>
-          <h3>ovels</h3>
-          <p>21.1 KM · Palace loop</p>
-          <a href="#" class="event-link">Register →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<footer class="site-footer">
-  <div class="footer-wrap">
-
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">MDME</div>
-        <p>Measured courses. Unforgettable cities. Your strongest finish yet.</p>
-        <div class="footer-socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="YouTube">YT</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="index1.html">Home</a>
-        <a href="aboutus.html">About</a>
-        <a href="contactus.html">Contact</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScL_WizdNvO6INWPTZCJ2vbD3czSYTEwpZgBB7y1-mJ5gqrEw/viewform?usp=header" target="_blank" rel="noopener">Register</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:race@form42.run">race@form42.run</a>
-        <p>Mysore, Karnataka, India</p>
-      </div>
-
-      <div class="footer-col footer-next">
-        <h4>Next start</h4>
-        <strong>City Circuit</strong>
-        <p>18 Oct 2026 · 05:30</p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 Unique Athletics Club, Mysore</span>
-      <span>Run with intention.</span>
-    </div>
-
-  </div>
-</footer>
-
-  <script src="script.js"></script>
-</body>
+    <div class="motion-data">
+      <div class="pulse-line">
+              </div>
+              <div class="stats">
+                <div><strong>36K</strong>
+                  <span>Runners</span>
+                </div>
+                <div>
+                  <strong>12</strong>
+                  <span>Course records</span>
+                </div>
+                <div>
+                  <strong>98%</strong>
+                  <span>Finish rate</span>
+                </div>
+              </div>
+              <p>Every detail is calibrated: clear starts, certified distances, live splits, considered recovery, and a finish that stays with you.</p>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="container split center">
+            <img class="feature-image" src="assets/community-runners.jpg" alt="Marathon finishers celebrating together" loading="lazy">
+            <div>
+              <p class="eyebrow muted">03 / The collective</p>
+              <h2>The finish is personal. The feeling is shared.</h2>
+              <p class="body-copy">First marathon or fiftieth, the road is open to everyone willing to meet it. Come for the challenge. Stay for the people.</p>
+              <a class="btn btn-outline" href="about.html">Our story <span>→</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <p class="footer-logo">FORM/42</p>
+            <p class="footer-copy">Measured courses. Unforgettable cities. Your strongest finish yet.</p>
+          </div>
+          
+          <div>
+            <p class="eyebrow dim">Navigate</p>
+            <div class="footer-links">
+              <a href="about.html">About</a>
+              <a href="register.html">Register</a>
+              <a href="contact.html">Contact</a></div>
+            </div>
+            <div>
+              <p class="eyebrow dim">Next race</p>
+              <p class="footer-race">Bengaluru City 42</p>
+              <p class="dim">18 October 2026</p>
+            </div>
+          </div>
+          <div class="container footer-bottom">
+            <span>© 2026 FORM/42</span>
+            <span>Run your line.</span>
+          </div>
+        </footer>
+      </body>
+      </html>

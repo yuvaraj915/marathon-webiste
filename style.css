@@ -1,511 +1,896 @@
-:root{
-  --ink:#000000;
-  --paper:#ffffff;
-  --soft:#ffffff;
-  --muted:#000000;
-  --line:#000000;
-  --line-dark:#ffffff;
+/* ==========================================================================
+   1. Variables
+   ========================================================================== */
+:root {
+  --bg: #fafafa;
+  --ink: #171717;
+  --muted: #737373;
+  --line: #c7c7c7;
+  --soft: #f0f0f0;
+  --display: "Anton", sans-serif;
+  --sans: "DM Sans", sans-serif;
 }
 
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'Inter',sans-serif;
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
 
-h1,h2,.display{
-  font-family:'Archivo Black',sans-serif;
-  font-weight:400;
-  text-transform:uppercase;
-  line-height:0.92;
-  letter-spacing:-0.01em;
-  margin:0;
-}
-
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
-button{font-family:inherit;}
-::selection{background:var(--ink);color:var(--paper);}
-:focus-visible{outline:2px solid var(--ink); outline-offset:3px;}
-
-.wrap{max-width:1320px; margin:0 auto; padding:0 40px;}
-
-/*---nav---*/
-
-header{
-  position:sticky; top:0; z-index:100;
-  background:var(--paper);
-  background-color: black;
-  box-shadow:0 1px 4px rgba(0,0,0,0.08);  
-}
-
-nav{
-  position: relative;
-  max-width:1320px; margin:0 auto; padding:20px 24px;
-  display:flex; align-items:center; justify-content:space-between;
-  background:black;
-}
-
-/* ---- LOGO: boxed wordmark, centered in nav ---- */
-
-
-.nav-links{display:flex; gap:34px; font-size:25px; font-weight:500;}
-.nav-links a{color:white; transition:color .2s ease;}
-.nav-links a:hover, .nav-links a.active{color:white;}
-.nav-cta{
-  background:black;
-  font-weight:600; font-size:13px; letter-spacing:0.04em;
-  text-transform:uppercase;
-  padding:14px 22px;
-  display:inline-flex; align-items:center; gap:8px;
-  transition:opacity .2s ease;
-}
-.nav-cta:hover{opacity:0.8;}
-.burger{
-  display:none; flex-direction:column; gap:5px;
-  background:none; border:none; cursor:pointer; padding:6px;
-  position: absolute;
-  right: 22px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 210;
-}
-.burger span{
-  width:22px; height:2px; background:white; display:block;
-  transition: transform .25s ease, opacity .25s ease;
-}
-.burger.open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-.burger.open span:nth-child(2){ opacity: 0; }
-.burger.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-
-/*hamburger menu design for mobile*/
-@media (max-width: 900px){
-  .nav-links{
-    display:none;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    position:absolute;
-    top:100%; left:0; right:0;
-    background:black;        /* black dropdown background */
-    padding:24px 22px;
-    gap:18px;
-    z-index:200;
-  }
-  .nav-links.open{
-    display:flex;
-  }
-  .nav-links a{
-    color:white;              /* white menu text */
-    font-size:18px;
-  }
-  .burger{
-    display:flex;
-  }
-}
-
-/*register button design for mobile*/
-.nav-register{
-  background: white;
-  color: black !important;      /* overrides the default white link color */
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  padding: 12px 22px;
-  border-radius: 999px;         /* pill shape */
-  transition: transform .2s ease, opacity .2s ease;
-  display: inline-block;
-}
-.nav-register:hover{
-  transform: translateY(-2px);
-  opacity: 0.85;
-}
-
-/* On mobile, make it a bit bigger and full-width so it's easy to tap */
-@media (max-width: 900px){
-  .nav-register{
-    margin-top: 6px;
-    padding: 14px 28px;
-    font-size: 15px;
-    text-align: center;
-  }
-}
-
-/*hecro section image slide style*/
-.hero{
-  position:relative;
-  min-height:88vh;
-  background:#000;
-  overflow:hidden;
-  border: 2px solid #ffffff;
+/* ==========================================================================
+   2. Base / Reset
+   ========================================================================== */
+* {
   box-sizing: border-box;
 }
 
-.hero-img{position:absolute; inset:0;}
-
-.hero-img .slide{
-  position:absolute; inset:0;
-  width:100%; height:100%; object-fit:cover;
-  filter: contrast(1.05);
-  opacity:0;
-  transition: opacity 1.2s ease;
-}
-.hero-img .slide.active{
-  opacity:0.85;
+html {
+  scroll-behavior: smooth;
 }
 
-.hero-dots{
-  position:absolute;
-  bottom:24px; left:0; right:0;
-  z-index:3;
-  display:flex; justify-content:center; gap:10px;
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
 }
-.hero-dots .dot{
-  width:9px; height:9px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.4);
-  border:none;
-  cursor:pointer;
-  transition:background .2s ease;
+
+img {
+  display: block;
+  max-width: 100%;
 }
-.hero-dots .dot.active{
-  background:#fff;
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(100% - 40px, 1280px);
+  margin-inline: auto;
 }
 
 
-/*---hero section body text design---*/
-.hero{
-  display:flex;
-  align-items:flex-end; /* pushes hero-body to the bottom of the hero */
-}
-
-.hero-body{
-  position:relative;
-  z-index:3;              /* sits above the slider images and the dots */
-  padding:0 40px 64px;
-  width:100%;
-  color:#fff;
-}
-
-.hero-body h1{
-  font-family:'Archivo Black',sans-serif;
-  font-size:clamp(36px, 6vw, 80px);
-  text-transform:uppercase;
-  line-height:0.95;
-  margin-bottom:28px;
-  max-width:900px;
-}
-
-.hero-foot{
-  display:flex;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-/*scroll animation csss*/
-.distance-marquee{
-  background: var(--ink, #000);
-  border-bottom: 1px solid #fff;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 12px 0;
-}
-
-.distance-track{
-  display: inline-flex;
-  animation: distance-scroll 18s linear infinite;
-}
-
-.distance-track span{
-  font-family:'Archivo Black', sans-serif;
-  font-size: 32px;
-  color: #fff;
+/* ==========================================================================
+   3. Typography & Utilities
+   ========================================================================== */
+.hero h1,
+.page-intro h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
-  padding: 0 32px;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.dim {
+  color: rgba(250, 250, 250, 0.55);
+}
+
+.dim-light {
+  color: rgba(250, 250, 250, 0.65);
+}
+
+.reveal {
+  animation: rise 0.8s ease-out both;
+}
+
+
+/* ==========================================================================
+   4. Buttons
+   ========================================================================== */
+.btn {
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
-  gap: 32px;
-}
-
-.distance-track span::after{
-  content: "•";
-  color: #fff;
-  opacity: 0.4;
-}
-
-@keyframes distance-scroll{
-  from{ transform: translateX(0); }
-  to{ transform: translateX(-50%); }
-}
-
-@media (prefers-reduced-motion: reduce){
-  .distance-track{ animation: none; }
-}
-
-
-/*-upcoming events section design-*/
-.events-section{
-  background: #fff;
-  padding: 90px 0;
-}
-
-.events-wrap{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-.events-tag{
-  display: block;
-  font-size: 13px;
+  justify-content: center;
+  gap: 24px;
+  border: 1px solid transparent;
+  padding: 0 20px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #777;
-  margin-bottom: 10px;
+  letter-spacing: 0;
+  cursor: pointer;
 }
 
-.events-heading h2{
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(32px, 4vw, 48px);
-  text-transform: uppercase;
-  margin: 0 0 48px;
+.btn-dark {
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 12px;
 }
 
-.events-list{
+/*desktop register button design*/
+.desktop-cta {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn-light {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.btn-outline {
+  border-color: var(--ink);
+  background: transparent;
+  color: var(--ink);
+}
+
+.icon-link {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--ink);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  font-size: 24px;
+  flex: none;
+}
+
+
+/* ==========================================================================
+   5. Header & Navigation
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--line);
+  background: rgba(250, 250, 250, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo,
+.footer-logo {
+  font: 400 26px/1 var(--display);
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--muted);
+}
+
+.desktop-nav {
+  display: flex;
   gap: 32px;
 }
 
-.event-card{
-  border: 1px solid #000;
+.desktop-nav a {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.desktop-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+/* Hidden on desktop, shown on mobile (see media query) */
+.menu-button,
+.mobile-nav {
+  display: none;
+}
+
+
+/* ==========================================================================
+   6. Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: calc(100svh - 72px);
   overflow: hidden;
-  transition: transform .25s ease;
+  background: var(--ink);
+  color: var(--bg);
 }
 
-.event-card:hover{
-  transform: translateY(-4px);
-}
-
-.event-photo{
-  aspect-ratio: 16/10;
-  overflow: hidden;
-}
-
-.event-photo img{
+.hero > img,
+.hero-shade {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.event-info{
-  padding: 24px;
+.hero > img {
+  opacity: 0.65;
 }
 
-.event-date{
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #777;
+.hero-shade {
+  background: linear-gradient(to top, var(--ink), transparent 70%);
 }
 
-.event-info h3{
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 26px;
-  text-transform: uppercase;
-  margin: 8px 0 6px;
+.hero-inner {
+  position: relative;
+  min-height: calc(100svh - 72px);
+  padding-block: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.event-info p{
-  font-size: 14px;
-  color: #555;
-  margin: 0 0 18px;
-}
-
-.event-link{
-  display: inline-block;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  color: #000;
-  border-bottom: 2px solid #000;
-  padding-bottom: 2px;
-}
-
-@media (max-width: 700px){
-  .events-list{
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/*opening and closing of the upcoming events*/
-.events-heading{
+.hero-meta,
+.race-meta {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 48px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.events-heading h2{
+.hero h1 {
+  font-size: clamp(80px, 15vw, 208px);
+  line-height: 0.76;
+  margin: 20px 0 0;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.hero-actions p {
+  max-width: 380px;
+  color: rgba(250, 250, 250, 0.7);
+  font-size: 14px;
+}
+
+
+/* ==========================================================================
+   7. Ticker
+   ========================================================================== */
+.ticker {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  padding-block: 13px;
+}
+
+.ticker > div {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  font: 400 30px/1 var(--display);
+  text-transform: uppercase;
+  animation: ticker 18s linear infinite;
+}
+
+.ticker span {
+  padding-inline: 32px;
+}
+
+
+/* ==========================================================================
+   8. Sections & Headings
+   ========================================================================== */
+.section {
+  padding-block: 100px;
+}
+
+.section.compact {
+  padding-block: 80px;
+}
+
+.section-dark {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.section-heading h2,
+.split h2 {
+  font-size: clamp(48px, 7vw, 80px);
+  line-height: 0.9;
+  margin: 16px 0 0;
+}
+
+.section-heading > p {
+  max-width: 440px;
+  color: var(--muted);
+}
+
+
+/* ==========================================================================
+   9. Race Cards
+   ========================================================================== */
+.race-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.race-card {
+  border-top: 1px solid var(--ink);
+  padding-top: 16px;
+}
+
+.race-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-top: 16px;
+}
+
+.race-card h3 {
+  font-size: 40px;
+  line-height: 1;
+  margin: 20px 0 0;
+}
+
+.race-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.race-bottom p {
+  font-size: 13px;
+  color: var(--muted);
   margin: 4px 0 0;
 }
 
-#events-toggle{
-  width: 48px;
-  height: 48px;
-  border: 1px solid #000;
-  background: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: transform .25s ease;
-}
 
-#events-toggle.closed{
-  transform: rotate(-90deg);
-}
-
-.events-list{
+/* ==========================================================================
+   10. Motion / Stats Section
+   ========================================================================== */
+.motion-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  overflow: hidden;
-  max-height: 800px;
-  opacity: 1;
-  transition: max-height .4s ease, opacity .3s ease, margin-top .4s ease;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
 }
 
-.events-list.closed{
-  max-height: 0;
-  opacity: 0;
-  margin-top: 0;
+.motion-grid h2 {
+  font-size: clamp(60px, 8vw, 96px);
+  line-height: 0.9;
+  margin: 20px 0;
 }
 
-
-/*footer section design*/
-.site-footer{
-  background: #000;
-  color: #fff;
-  padding: 80px 0 0;
+.motion-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.footer-wrap{
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 40px;
+.motion-data > p {
+  max-width: 600px;
+  color: rgba(250, 250, 250, 0.65);
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: 40px;
 }
 
-.footer-top{
+.pulse-line {
+  height: 1px;
+  background: var(--bg);
+  transform-origin: left;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.stats {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(250, 250, 250, 0.2);
+  margin-top: 64px;
 }
 
-.footer-logo{
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 26px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+.stats > div {
+  background: var(--ink);
+  padding: 28px;
 }
 
-.footer-brand p{
-  color: #a8a8a8;
-  font-size: 14px;
-  max-width: 280px;
-  margin: 0 0 22px;
+.stats strong {
+  display: block;
+  font: 400 60px/1 var(--display);
 }
 
-.footer-socials{
-  display: flex;
-  gap: 14px;
-}
-
-.footer-socials a{
-  width: 36px;
-  height: 36px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.stats span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(250, 250, 250, 0.55);
   font-size: 11px;
   font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  transition: background .2s ease, color .2s ease;
-}
-
-.footer-socials a:hover{
-  background: #fff;
-  color: #000;
-}
-
-.footer-col h4{
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #999;
-  margin: 0 0 20px;
 }
 
-.footer-col a,
-.footer-col p{
-  display: block;
-  color: #fff;
+
+/* ==========================================================================
+   11. Split Layout
+   ========================================================================== */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+
+.split.center {
+  align-items: center;
+}
+
+.feature-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.body-copy {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 540px;
+  margin: 24px 0 30px;
+}
+
+
+/* ==========================================================================
+   12. Page Intro
+   ========================================================================== */
+.page-intro {
+  border-bottom: 1px solid var(--line);
+  padding-block: 80px;
+}
+
+.page-intro h1 {
+  font-size: clamp(64px, 10vw, 128px);
+  line-height: 0.85;
+  max-width: 1050px;
+  margin: 28px 0;
+}
+
+.page-intro .container > p:last-child {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+
+/* ==========================================================================
+   13. Standards
+   ========================================================================== */
+.standards {
+  background: var(--soft);
+  border-block: 1px solid var(--line);
+}
+
+.standard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 40px;
+}
+
+.standard-grid article {
+  background: var(--soft);
+  padding: 32px;
+}
+
+.standard-grid h3 {
+  font-size: 42px;
+  margin: 64px 0 10px;
+}
+
+.standard-grid p {
   font-size: 14px;
-  text-decoration: none;
-  margin-bottom: 12px;
+  color: var(--muted);
 }
 
-.footer-col a{
-  transition: color .2s ease;
+
+/* ==========================================================================
+   14. Forms & Contact
+   ========================================================================== */
+.form-layout {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 64px;
 }
 
-.footer-col a:hover{
-  color: #a8a8a8;
+.check-list {
+  padding: 0;
+  list-style: none;
+  margin: 24px 0;
 }
 
-.footer-next strong{
-  font-size: 17px;
+.check-list li {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.aside-note {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 40px;
+}
+
+.aside-note p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-grid label {
+  font-size: 11px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
-.footer-next p{
-  color: #a8a8a8;
+.form-grid input:not([type="checkbox"]),
+.form-grid select,
+.form-grid textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 14px;
+  min-height: 52px;
+  outline: none;
 }
 
-.footer-bottom{
+.form-grid textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  border-color: var(--ink);
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--muted);
+  text-transform: none !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.checkbox input {
+  margin-top: 4px;
+}
+
+.submit {
+  width: max-content;
+}
+
+/* Success message */
+.success {
+  border: 1px solid var(--ink);
+  padding: 48px;
+}
+
+.success[hidden] {
+  display: none;
+}
+
+.check-icon {
+  font-size: 34px;
+}
+
+.success h2 {
+  font-size: 52px;
+  line-height: 0.95;
+  margin: 16px 0;
+}
+
+.success > p:not(.eyebrow) {
+  color: var(--muted);
+  max-width: 520px;
+}
+
+.success .btn {
+  margin-top: 24px;
+}
+
+/* Contact details */
+.contact-details {
+  display: grid;
+  align-content: start;
+  gap: 32px;
+}
+
+.contact-details a,
+.contact-details strong {
+  font-size: 20px;
+  display: block;
+  margin-top: 10px;
+}
+
+
+/* ==========================================================================
+   15. Footer
+   ========================================================================== */
+.site-footer {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  padding-block: 56px;
+}
+
+.footer-copy {
+  max-width: 320px;
+  color: rgba(250, 250, 250, 0.6);
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.footer-race {
+  font-weight: 700;
+  margin: 16px 0 3px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(250, 250, 250, 0.2);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
-  font-size: 13px;
-  color: #8a8a8a;
-  flex-wrap: wrap;
-  gap: 10px;
+  padding-block: 20px;
+  color: rgba(250, 250, 250, 0.45);
+  font-size: 11px;
+  text-transform: uppercase;
 }
 
-@media (max-width: 900px){
-  .footer-top{
-    grid-template-columns: 1fr 1fr;
+
+/* ==========================================================================
+   16. Animations
+   ========================================================================== */
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
   }
 }
 
-@media (max-width: 560px){
-  .footer-top{
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ==========================================================================
+   17. Responsive — Mobile (max-width: 800px)
+   ========================================================================== */
+@media (max-width: 800px) {
+  .container {
+    width: min(100% - 32px, 1280px);
+  }
+
+  /* Navigation */
+  .desktop-nav,
+  .desktop-cta {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .menu-button span {
+    width: 19px;
+    height: 1px;
+    background: var(--ink);
+    transition: 0.2s;
+  }
+
+  .menu-button.open span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .menu-button.open span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .mobile-nav {
+    border-top: 1px solid var(--line);
+    padding: 20px;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 700;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero,
+  .hero-inner {
+    min-height: calc(100svh - 72px);
+  }
+
+  .hero h1 {
+    font-size: clamp(72px, 24vw, 112px);
+  }
+
+  .hero-meta {
+    font-size: 10px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* Sections */
+  .section {
+    padding-block: 72px;
+  }
+
+  .section.compact {
+    padding-block: 60px;
+  }
+
+  .section-heading,
+  .race-bottom {
+    align-items: flex-start;
+  }
+
+  .section-heading {
+    flex-direction: column;
+  }
+
+  /* Grids */
+  .race-grid,
+  .motion-grid,
+  .split,
+  .form-layout {
     grid-template-columns: 1fr;
+  }
+
+  .race-grid {
+    gap: 48px;
+  }
+
+  .motion-grid,
+  .split,
+  .form-layout {
+    gap: 42px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats > div:last-child {
+    grid-column: span 2;
+  }
+
+  .standard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .standard-grid h3 {
+    margin-top: 32px;
+  }
+
+  /* Forms */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .success {
+    padding: 28px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: span 2;
+  }
+
+  /* Page intro */
+  .page-intro {
+    padding-block: 60px;
+  }
+}
+
+
+/* ==========================================================================
+   18. Accessibility — Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ticker > div,
+  .pulse-line,
+  .reveal {
+    animation: none;
   }
 }
