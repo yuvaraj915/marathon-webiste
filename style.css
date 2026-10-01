@@ -157,7 +157,7 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 6px solid black;
   background: rgba(250, 250, 250, 0.95);
   backdrop-filter: blur(12px);
 }
@@ -335,7 +335,7 @@ h3 {
   white-space: nowrap;
   font: 400 30px/1 var(--display);
   text-transform: uppercase;
-  animation: ticker 18s linear infinite;
+animation: ticker 10s linear infinite;
 }
 
 .ticker span {
@@ -347,7 +347,7 @@ h3 {
    8. Sections & Headings
    ========================================================================== */
 .section {
-  padding-block: 100px;
+  padding-block: 60px;
 }
 
 .section.compact {
@@ -398,13 +398,15 @@ h3 {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  margin-top: 16px;
+  margin-top: 12px;
+  border-radius: 12px;
 }
 
 .race-card h3 {
   font-size: 40px;
   line-height: 1;
-  margin: 20px 0 0;
+  margin: 12px 0 0;
+
 }
 
 .race-bottom {
@@ -429,6 +431,7 @@ h3 {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 56px;
+  background: white;
 }
 
 .motion-grid h2 {
@@ -463,7 +466,7 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: rgba(250, 250, 250, 0.2);
-  margin-top: 64px;
+  margin-top: 26px;
 }
 
 .stats > div {
@@ -499,10 +502,15 @@ h3 {
   align-items: center;
 }
 
+/* ==========================================================================
+   collective section  css
+   ========================================================================== */
 .feature-image {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 12px;
+
 }
 
 .body-copy {
@@ -567,126 +575,6 @@ h3 {
 }
 
 
-/* ==========================================================================
-   14. Forms & Contact
-   ========================================================================== */
-.form-layout {
-  display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
-  gap: 64px;
-}
-
-.check-list {
-  padding: 0;
-  list-style: none;
-  margin: 24px 0;
-}
-
-.check-list li {
-  margin: 15px 0;
-  font-size: 14px;
-}
-
-.aside-note {
-  border-top: 1px solid var(--line);
-  padding-top: 24px;
-  margin-top: 40px;
-}
-
-.aside-note p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.form-grid {
-  display: grid;
-  gap: 24px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.form-grid label {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.form-grid input:not([type="checkbox"]),
-.form-grid select,
-.form-grid textarea {
-  display: block;
-  width: 100%;
-  margin-top: 8px;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: transparent;
-  color: var(--ink);
-  padding: 14px;
-  min-height: 52px;
-  outline: none;
-}
-
-.form-grid textarea {
-  min-height: 160px;
-  resize: vertical;
-}
-
-.form-grid input:focus,
-.form-grid select:focus,
-.form-grid textarea:focus {
-  border-color: var(--ink);
-}
-
-.checkbox {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  color: var(--muted);
-  text-transform: none !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-}
-
-.checkbox input {
-  margin-top: 4px;
-}
-
-.submit {
-  width: max-content;
-}
-
-/* Success message */
-.success {
-  border: 1px solid var(--ink);
-  padding: 48px;
-}
-
-.success[hidden] {
-  display: none;
-}
-
-.check-icon {
-  font-size: 34px;
-}
-
-.success h2 {
-  font-size: 52px;
-  line-height: 0.95;
-  margin: 16px 0;
-}
-
-.success > p:not(.eyebrow) {
-  color: var(--muted);
-  max-width: 520px;
-}
-
-.success .btn {
-  margin-top: 24px;
-}
 
 /* Contact details */
 .contact-details {
@@ -707,8 +595,8 @@ h3 {
    15. Footer
    ========================================================================== */
 .site-footer {
-  background: var(--ink);
-  color: var(--bg);
+  background: whitesmoke;
+  color: black;
 }
 
 .footer-grid {
@@ -719,7 +607,7 @@ h3 {
 }
 
 .footer-copy {
-  max-width: 320px;
+  max-width: 100px;
   color: rgba(250, 250, 250, 0.6);
   font-size: 14px;
 }
@@ -860,7 +748,7 @@ h3 {
 
   /* Sections */
   .section {
-    padding-block: 72px;
+    padding-block: 40px;
   }
 
   .section.compact {
