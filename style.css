@@ -299,7 +299,7 @@ h3 {
 /* Dots */
 .hero-dots {
   position: absolute;
-  right: 20px;
+  left: 20px;
   bottom: 24px;
   z-index: 2;
   display: flex;
@@ -307,7 +307,7 @@ h3 {
 }
 
 .dot {
-  width: 28px;
+  width: 12px;
   height: 3px;
   border: 0;
   padding: 0;
@@ -832,6 +832,7 @@ h3 {
     flex-direction: column;
     gap: 16px;
     font-weight: 700;
+
   }
 
   .mobile-nav.open {
