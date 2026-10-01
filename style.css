@@ -807,6 +807,7 @@ h3 {
     justify-content: center;
     align-items: center;
     gap: 7px;
+    border-radius: 12px;
   }
 
   .menu-button span {
@@ -814,6 +815,7 @@ h3 {
     height: 1px;
     background: var(--ink);
     transition: 0.2s;
+    
   }
 
   .menu-button.open span:first-child {
