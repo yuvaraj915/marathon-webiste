@@ -185,7 +185,7 @@ h3 {
 }
 
 .desktop-nav a {
-  font-size: 12px;
+  font-size: 25px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -720,6 +720,7 @@ animation: ticker 10s linear infinite;
     flex-direction: column;
     gap: 16px;
     font-weight: 700;
+    font-size: 25px;
 
   }
 
