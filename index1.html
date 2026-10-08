@@ -1,0 +1,31 @@
+          <!-- Hardware Diagnostics -->
+          <div class="settings-group">
+            <h4>Hardware Info</h4>
+            <div class="diag-grid">
+              <div class="diag-item"><span>Sensor:</span><strong>NTC 10K (W1209)</strong></div>
+              <div class="diag-item"><span>ADC Pin:</span><strong>GPIO 34</strong></div>
+              <div class="diag-item"><span>Raw ADC:</span><strong id="diagRawAdc">--</strong></div>
+              <div class="diag-item"><span>Resistance:</span><strong id="diagResist">-- Ω</strong></div>
+              <div class="diag-item"><span>IP Address:</span><strong id="diagIp">--</strong></div>
+              <div class="diag-item"><span>Wi-Fi RSSI:</span><strong id="diagRssi">-- dBm</strong></div>
+            </div>
+          </div>
+          <!-- Simulation toggle for offline preview -->
+          <div class="settings-group">
+            <div class="setting-row checkbox-row">
+              <label for="demoModeToggle">Demo / Simulator Mode:</label>
+              <input type="checkbox" id="demoModeToggle">
+            </div>
+            <p class="settings-hint">Simulate real-time temperature fluctuations when disconnected from ESP32.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>ESP32 Room Temperature Node • mDNS: <a href="http://roomtemp.local" target="_blank">roomtemp.local</a></span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
